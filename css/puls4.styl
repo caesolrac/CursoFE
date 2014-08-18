@@ -4,6 +4,17 @@ gristexto = #A7A7A7
 rojito = #FF3B30
 azulito = #5AC8FB
 
+@font-face {
+	font-family: 'iconitos';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 a
 	color azulito
 
@@ -12,6 +23,22 @@ body
 	color grisoscuro
 	font-family arial
 	font-size 16px
+
+footer
+	background azulito
+	color rgba(white, 0.5)
+	padding 1em 0
+	text-align center
+	width 100%
+	h3
+		font size 14px
+		font-weight normal
+		strong
+			display block
+		.mejor
+			&:before
+			&:after
+				content "-"
 
 header
 	background grisoscuro
@@ -47,6 +74,12 @@ header
 			font-style italic
 			text-shadow 1px 1px 0px black
 			float right
+			&:before
+				display inline-block
+				margin-right 0.2em
+				font-size 1em
+				font-family "iconitos"
+				content "\e600"
 		.titulo
 			font-size 18px
 			font-weight normal
@@ -58,7 +91,7 @@ header
 		top 10px
 		right 10px
 		.avatar
-			margin 0 1em 0 0
+			margin 0 1.2em 0 0
 			position relative
 			z-index 2
 			img
@@ -74,6 +107,12 @@ header
 			padding 3px
 			position absolute
 			text-align right
+			text-decoration none
+			&:after
+				display inline-block
+				font-family "iconitos"
+				content "\e602"
+				text-shadow 1px 1px 0px black
 
 nav
 	background rojito
@@ -106,6 +145,7 @@ nav
 .posts
 	padding 0.5em
 	.post
+		margin-bottom 0.5em
 		background white
 		border-radius 0 0 0.5em 0.5em
 		box-shadow 2px 2px 10px rgba(black, 0.5)
@@ -113,15 +153,75 @@ nav
 		.acciones
 			border-top 3px solid rojito
 			padding 0.5em
+			overflow hidden
+			.datos
+				float right
+				.comentarios
+					background gristexto
+					border-radius 3px
+					color white
+					margin 0 0.5em 0 0
+					padding 2px 5px
+					text-decoration none
+				.estrellita
+					text-decoration none
+					&:after
+						color yellow
+						font-family "iconitos"
+						content "\e601"
+				
+			.votos
+				float left
+				.down
+				.up
+					text-decoration none 
+				.down
+					color red
+					&:before
+						font-size 1.5em
+						font-family "iconitos"
+						content "\e602"
+				.up
+					color green
+					&:before
+						font-size 1.5em
+						font-family "iconitos"
+						content "\e603"
 		.descripcion
 			color gristexto
-			.titulo
-				color grisoscuro
-				font-size 18px
-				font-style italic /**horacondiezminutos*/
+			.detalles
+				height 160px
+				margin-left 130px
+				.autor
+					margin 0.5em 0 2em 0
+				.fecha
+					float right
+					margin 0 1em 0 0
+				.tag
+					background rojito
+					border-radius 0.5em
+					color white
+					padding 0.2em 0.5em
+					text-decoration none
+				.titulo
+					color grisoscuro
+					font-size 18px
+					font-style italic 
+					margin 0
+					padding 0.5em 0.5em 0 0
 			.imagen
 				float left
 				img
 					height 160px
 					vertical-align top
 					width 120px
+
+@media screen and (min-width: 768px)
+	
+	.posts
+		.post
+			display inline-block
+			width 48%
+			vertical-align top
+			&:nth-child(odd)
+				margin-right 2%
